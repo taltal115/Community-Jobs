@@ -1,0 +1,40 @@
+<section data-ng-controller="UserController">
+    <div class="page-header">
+        <h1>New invitation</h1>
+    </div>
+    <div class="col-md-4" cg-busy="{promise:inviteUser, message:'Sending...', delay:100}">
+        <form name="inviteForm" class="form-horizontal" data-ng-submit="invite()" novalidate>
+            <fieldset>
+                <div class="col-md-12 form-group">
+                    <label class="control-label" for="email">To</label>
+                    <div class="controls">
+                        <input name="to" type="text" data-ng-model="to" id="to" class="form-control" placeholder="Recipient name" required>
+                    </div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="controls">
+                        <input name="email" type="text" data-ng-model="email" id="email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label>seat</label>
+                    <ui-select ng-model="seat.selected">
+                        <ui-select-match placeholder="Select Seat...">{{$select.selected}}</ui-select-match>
+                        <ui-select-choices repeat="seat in availableSeats">
+                            {{seat}}
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Send" class="btn btn-primary">
+                    <span class="spinner" us-spinner="{radius:8}" spinner-key="spinner-1"></span>
+                </div>
+                <progressbar data-ng-show="processing" class="progress-striped active" value="inviteProgress" type="success">Sending...</progressbar>
+                <div id="error" data-ng-show="error" class="alert alert-danger" role="alert">
+                    <p data-ng-bind="error"></p>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

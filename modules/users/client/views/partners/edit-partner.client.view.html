@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+    <div class="col-md-12 form-group">
+        <label>Allowed {{modelName}}</label>
+        <ui-select multiple ng-model="selections.items">
+            <ui-select-match placeholder="Select {{modelName}}..."><span class="label label-primary">{{$item[number]}}</span> {{$item.name}}</ui-select-match>
+            <ui-select-choices repeat="item in availableItems">
+                <span class="label label-primary">{{item[number]}}</span> {{item.name}}
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="save()">Save</button>
+    <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+</div>

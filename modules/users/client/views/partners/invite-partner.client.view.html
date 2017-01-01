@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+    <div class="col-md-12 form-group">
+        <label class="control-label">To</label>
+        <div class="controls">
+            <input name="to" type="text" data-ng-model="to" class="form-control" placeholder="Recipient name" required>
+        </div>
+    </div>
+    <div class="col-md-12 form-group">
+        <label class="control-label">Email</label>
+        <div class="controls">
+            <input name="email" type="text" data-ng-model="email" class="form-control" placeholder="Email" required>
+        </div>
+    </div>
+    <div class="col-md-12 form-group">
+        <label class="control-label">Role</label>
+        <select class="form-control" data-ng-model="role">
+            <option>publisher_CPM</option>
+            <option>publisher_CPV</option>
+            <option>publisher</option>
+        </select>
+    </div>
+    <div class="col-md-12 form-group">
+        <label>Allowed {{modelName}}</label>
+        <ui-select multiple ng-model="selections.items">
+            <ui-select-match placeholder="Select {{modelName}}..."><span class="label label-primary">{{$item[number]}}</span> {{$item.name}}</ui-select-match>
+            <ui-select-choices repeat="item._id as item in availableItems">
+                <span class="label label-primary">{{item[number]}}</span> {{item.name}}
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="save()">Send</button>
+    <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+</div>
+</div>

@@ -1,0 +1,59 @@
+<section data-ng-controller="ActivitiesController" data-ng-init="find()">
+    <div class="page-header">
+        <h3>Activities</h3>
+    </div>
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" data-ng-model="search" placeholder="Filter..." ng-change="figureOutItemsToDisplay()">
+            </div>
+        </div>
+    </form>
+    <br>
+    <div class="row" cg-busy="{promise:loadActivities.$promise, message:'Loading...', delay:100}">
+        <div class="col-md-12">
+            <div  class="table-responsive">
+                <table class="table table-hover table-striped table-condensed table-responsive">
+                    <thead>
+                    <tr>
+                        <th class="col-md-2" data-ng-click="setSorter('timestamp', 'timestamp')">Date/Time
+                            <span ng-show="sorterStates.timestamp" data-ng-class="{'glyphicon glyphicon-sort-by-order': sorterStates.timestamp==1, 'glyphicon glyphicon-sort-by-order-alt': sorterStates.timestamp==2 }"></span>
+                        </th>
+                        <th class="col-md-2" data-ng-click="setSorter('user', 'userDisplayName')">User
+                            <span ng-show="sorterStates.user" data-ng-class="{'glyphicon glyphicon-sort-by-alphabet': sorterStates.user==1, 'glyphicon glyphicon-sort-by-alphabet-alt': sorterStates.user==2 }"></span>
+                        </th>
+                        <th class="col-md-5" data-ng-click="setSorter('description', 'description')">Description
+                            <span ng-show="sorterStates.description" data-ng-class="{'glyphicon glyphicon-sort-by-alphabet': sorterStates.description==1, 'glyphicon glyphicon-sort-by-alphabet-alt': sorterStates.description==2 }"></span>
+                        </th>
+                        <th class="col-md-3">Object</th>
+                    </tr>
+                    </thead>
+                    <tr data-ng-repeat="activity in pagedItems">
+                        <td>{{activity.timestamp | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                        <td><img ng-src="{{activity.user.profileImageURL}}" class="pull-left chat-profile-image"/>{{activity.userDisplayName}}</td>
+                        <td>{{activity.description}}</td>
+                        <td>
+                            <span class="label label-primary">{{activity.entityNumber1}}</span>
+                            <a data-ng-show="activity.model1 ==='Tag'" class="lookup" data-ui-sref="supply.editTag({tagId: activity.entityId1})"> {{activity.entityName1}}</a>
+                            <a data-ng-show="activity.model1 ==='Deal'" class="lookup" data-ui-sref="demand.editDeal({dealId: activity.entityId1})"> {{activity.entityName1}}</a>
+                            <a data-ng-show="activity.model1 ==='Advertiser'" class="lookup" data-ui-sref="demand.editAdvertiser({advertiserId:activity.entityId1})"> {{activity.entityName1}}</a>
+                            <a data-ng-show="activity.model1 ==='List'" class="lookup" data-ui-sref="restrictions.editList({listId: activity.entityId1})"> {{activity.entityName1}}</a>
+                            <a data-ng-show="activity.model1 ==='Publisher'" class="lookup" data-ui-sref="supply.editPublisher({publisherId: activity.entityId1})"> {{activity.entityName1}}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+            <div class="pull-right">
+                <div class="items-per-page">
+                    <div class="btn-group">
+                        <label class="btn btn-default" data-ng-change="buildPager()" data-ng-model="selectedItemsPerPage" btn-radio="20">20</label>
+                        <label class="btn btn-default" data-ng-change="buildPager()" data-ng-model="selectedItemsPerPage" btn-radio="50">50</label>
+                        <label class="btn btn-default" data-ng-change="buildPager()" data-ng-model="selectedItemsPerPage" btn-radio="100">100</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

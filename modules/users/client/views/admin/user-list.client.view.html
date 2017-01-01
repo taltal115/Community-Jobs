@@ -1,0 +1,26 @@
+<section data-ng-controller="UserController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <a class="btn btn-success" tooltip-placement="right" tooltip="Invite someone" data-ui-sref="admin.user-invite">
+                        <i class="glyphicon glyphicon-envelope"></i> Invite
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h3>Users</h3>
+    </div>
+    <div class="input-group col-md-3">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" data-ng-model="search" placeholder="Filter..." ng-change="figureOutItemsToDisplay()">
+    </div>
+    <br>
+  <div class="list-group" cg-busy="{promise:loadUsers.$promise, message:'Loading...', delay:100}">
+    <a data-ng-repeat="user in pagedItems" data-ui-sref="admin.user({userId: user._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" data-ng-bind="user.username"></h4>
+      <p class="list-group-item-text" data-ng-bind="user.email"></p>
+    </a>
+  </div>
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+</section>
