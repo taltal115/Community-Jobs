@@ -23,11 +23,73 @@ angular.module('jobs').controller('PageCtrl', ['$scope', '$stateParams', 'JobsFa
         //             .targetEvent(event)
         //     );
         // };
+
+        // window.marker = null;
+        //
+        // function initialize() {
+        //     var map;
+        //
+        //     var nottingham = new google.maps.LatLng(31.771959, 35.217018);
+        //
+        //     var style = [
+        //         { "featureType": "road",
+        //             "elementType":
+        //                 "labels.icon",
+        //             "stylers": [
+        //                 { "saturation": 1 },
+        //                 { "gamma": 1 },
+        //                 { "visibility": "on" },
+        //                 { "hue": "#e6ff00" }
+        //             ]
+        //         },
+        //         { "elementType": "geometry", "stylers": [
+        //             { "saturation": -100 }
+        //         ]
+        //         }
+        //     ];
+        //
+        //     var mapOptions = {
+        //         // SET THE CENTER
+        //         center: nottingham,
+        //
+        //         // SET THE MAP STYLE & ZOOM LEVEL
+        //         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        //         zoom:9,
+        //
+        //         // SET THE BACKGROUND COLOUR
+        //         backgroundColor:"#eeeeee",
+        //
+        //         // REMOVE ALL THE CONTROLS EXCEPT ZOOM
+        //         panControl:false,
+        //         zoomControl:true,
+        //         mapTypeControl:false,
+        //         scaleControl:false,
+        //         streetViewControl:false,
+        //         overviewMapControl:false,
+        //         zoomControlOptions: {
+        //             style:google.maps.ZoomControlStyle.SMALL
+        //         }
+        //
+        //     };
+        //     map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        //
+        //     // SET THE MAP TYPE
+        //     var mapType = new google.maps.StyledMapType(style, {name:"Grayscale"});
+        //     map.mapTypes.set('grey', mapType);
+        //     map.setMapTypeId('grey');
+        //
+        //     //CREATE A CUSTOM PIN ICON
+        //     var marker_image ='images/pin.png';
+        //     var pinIcon = new google.maps.MarkerImage(marker_image,null,null, null,new google.maps.Size(21, 34));
+        //
+        //     var marker = new google.maps.Marker({
+        //         position: nottingham,
+        //         map: map,
+        //         icon: pinIcon,
+        //         title: 'Absolute Nottingham'
+        //     });
+        // }
+        //
+        // google.maps.event.addDomListener(window, 'load', initialize);
     }
-]).config(function($mdIconProvider) {
-    $mdIconProvider
-        .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
-        .iconSet('device', 'img/icons/sets/device-icons.svg', 24)
-        .iconSet('communication', 'img/icons/sets/communication-icons.svg', 24)
-        .defaultIconSet('img/icons/sets/core-icons.svg', 24);
-});
+]);

@@ -26,6 +26,22 @@ angular.module('jobs').config(['$stateProvider',
                 data: {
                     roles: ['user', 'admin']
                 }
+            })
+            .state('aboutus', {
+                abstract: false,
+                url: '/aboutus',
+                templateUrl: 'modules/jobs/client/views/aboutus.client.view.html',
+                data: {
+                    roles: ['user', 'admin']
+                }
+            })
+            .state('contactus', {
+                abstract: false,
+                url: '/contactus',
+                templateUrl: 'modules/jobs/client/views/contactus.client.view.html',
+                data: {
+                    roles: ['user', 'admin']
+                }
             });
     }
 ]);

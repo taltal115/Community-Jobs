@@ -15,6 +15,9 @@ module.exports = function (app) {
     app.route('/api/page/:id').all(JobsPolicy.isAllowed)
         .get(Jobs.getUserPage);
     
+    app.route('/api/contactus/send').all(JobsPolicy.isAllowed)
+        .post(Jobs.contactus);
+    
     // app.route('/api/jobs/page').all(JobsPolicy.isAllowed)
     //     .get(Jobs.getList);
     // // .post(Services.bulkInsert);

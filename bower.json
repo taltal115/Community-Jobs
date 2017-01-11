@@ -25,7 +25,8 @@
     "angular-ui-select": "^0.19.4",
     "angular-material": "^1.1.1",
     "angular-filemanager": "^1.5.1",
-    "bootstrap-material-design": "^4.0.2"
+    "bootstrap-material-design": "^4.0.2",
+    "angular-facebook": "^0.2.3"
   },
   "resolutions": {
     "angular": "~1.3"

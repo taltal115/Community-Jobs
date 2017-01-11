@@ -13,9 +13,7 @@ module.exports = {
         'public/lib/ng-tags-input/ng-tags-input.css',
         'public/lib/ng-tags-input/ng-tags-input.bootstrap.css',
         'public/lib/angular-ui-switch/angular-ui-switch.css',
-        'public/lib/angular-material/angular-material.min.css',
-        'public/lib/angular-filemanager/dist/angular-filemanager.min.css',
-        'public/lib/bootstrap-material-design/dist/bootstrap-material-design.min.css'
+        '//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css'
       ],
       js: [
         'public/lib/ace-builds/src-min-noconflict/ace.js',
@@ -40,9 +38,7 @@ module.exports = {
         'public/lib/clipboard/dist/clipboard.js',
         'public/lib/ngclipboard/dist/ngclipboard.js',
         'public/lib/jquery/dist/jquery.min.js',
-        'public/lib/angular-aria/angular-aria.min.js',
-        'public/lib/angular-material/angular-material.min.js',
-        'public/lib/angular-filemanager/dist/angular-filemanager.min.js'
+          'https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false'
 
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

@@ -26,7 +26,17 @@ angular.module('jobs')
                 callback(err);
             });
         };
-        
+
+        factory.submitContact = function(form, callback) {
+            var dataUrl = '/api/contactus/send';
+            $http.post(dataUrl, form)
+                .success(function (result) {
+                    callback(null, result);
+                }).error(function(err){
+                callback(err);
+            });
+        };
+
         // factory.requestEvents = function(category, callback) {
         //     var dataUrl = '/api/events?flag=false&category='+category;
         //     $http.get(dataUrl)

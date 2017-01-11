@@ -334,3 +334,144 @@ select.form-control.input-sm.input-in-table {
 }
 
 body { background:#589ca7 url('../img/c12.jpg') no-repeat center top; }
+
+ol.name-value {
+    list-style: none;
+    display: table;
+}
+
+ol.name-value li {
+    display: table-row;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+ol.name-value li label {
+    display: table-cell;
+    width: 50%;
+}
+
+ol.name-value li span {
+    display: table-cell;
+    width: 50%;
+}
+
+
+/* reCSSet  */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { font:14px/1.58em Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; }
+h1 {font-size:2.285em; line-height:1.4em; margin: 0 0 .85em;}
+h2 {font-size:1.4em; margin:0 0 .85em;}
+h3 {font-size:1.125em;}
+h4 {font-size:1em;}
+
+p {margin:0 0 1.58em;}
+
+header {
+    position: fixed;
+    height: 50px;
+    box-shadow: 0 8px 18px -6px black;
+}
+footer {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 122px 20px 124px black;
+    text-align: center;
+    bottom: 0;
+}
+blockquote, q { quotes: none; font-family:Georgia, "Times New Roman", Times, serif; font-style:italic; color:#666; }
+blockquote:before, q:before { content: "“"; font-size:1.4em; text-indent:-.6em; margin-top:.15em; float:left; opacity:.3; }
+cite{display:block; text-transform:uppercase; letter-spacing:1px; font-style:normal; font-weight:bold; font-size:smaller; margin-top:1.9em;}
+cite:before{content:"–"; float:left; font-size:1.5em; text-indent:-1.3em; font-weight:bold; margin-top:-.1em;}
+
+ul { list-style:none; }
+.editor ul { list-style-type:disc; margin:0 0 1.58em 2em; }
+ol { list-style-type: decimal; margin:0 0 1.58em 2em; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+a, a:active, a:visited { color: #607890; }
+a:hover, a:active { outline: none; }
+a:hover { color: #036; }
+
+abbr { border-bottom: 1px dotted; cursor: help; text-transform:uppercase; font-size:.85em; }
+
+strong { font-weight: bold; }
+em { font-style:italic; }
+
+table { border-collapse: collapse; border-spacing: 0; margin:1.58em 0; }
+th { font-weight: bold; }
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+form { margin:0 0 1.58em; }
+label { cursor:pointer; }
+select, input, textarea { font:99% sans-serif; }
+input, select { vertical-align: middle; }
+textarea { overflow: auto; }
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+input.button { cursor: pointer; width: auto; overflow: visible; }
+
+/* REUSABLE CLASSES */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+body {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+#map {
+    height: 50%;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+#map div.gm-style-cc {
+    display: none;
+}
+
+#navbar-right {
+    right: 0;
+    top: 0;
+    position: absolute;
+}
+#navbar-left {
+    left: 0;
+    top: 0;
+    position: absolute;
+}

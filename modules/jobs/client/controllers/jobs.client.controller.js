@@ -2,8 +2,8 @@
 
 // Alerts controller
 angular.module('jobs')
-    .controller('JobsController', ['$scope', '$stateParams', '$location', '$state', '$filter', 'Authentication', 'JobsFactory', 'toastr','$mdDialog',
-    function ($scope, $stateParams, $location, $state, $filter, Authentication, JobsFactory, toastr, $mdDialog) {
+    .controller('JobsController', ['$scope', '$stateParams', '$location', '$state', '$filter', 'Authentication', 'JobsFactory', 'toastr',
+    function ($scope, $stateParams, $location, $state, $filter, Authentication, JobsFactory, toastr) {
         $scope.authentication = Authentication;
         $scope.sorter = ['-displayName'];
         $scope.selectedItemsPerPage = 10;
@@ -43,33 +43,17 @@ angular.module('jobs')
             // });
         };
 
-        function DialogController($scope, $mdDialog) {
-            $scope.hide = function() {
-                $mdDialog.hide();
-            };
-
-            $scope.cancel = function() {
-                $mdDialog.cancel();
-            };
-
-            $scope.answer = function(answer) {
-                $mdDialog.hide(answer);
-            };
-        }
-        $scope.status = '  ';
-        $scope.customFullscreen = false;
-
         $scope.showAlert = function(ev) {
             $scope.usersXX = ev;
 
             console.log("$scope.usersXX$scope.usersXX$scope.usersXX: ",ev);
-            $mdDialog.show({
-                controller: DialogController,
-                contentElement: '#myDialog',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true
-            });
+            // $mdDialog.show({
+            //     controller: DialogController,
+            //     contentElement: '#myDialog',
+            //     parent: angular.element(document.body),
+            //     targetEvent: ev,
+            //     clickOutsideToClose: true
+            // });
         };
         
         $scope.buildPager = function () {

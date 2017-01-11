@@ -13,6 +13,9 @@ var _         = require('lodash'),
     request   = require('request'),
     config    = require('./../../../../config/config');
 
+
+
+
 function setSeatName(seat) {
     var seatName;
     switch(seat) {
@@ -99,6 +102,29 @@ exports.getUserPage = function (req, res) {
                 res.json(user);
             }
         });
+};
+
+exports.contactus = function (req, res) {
+    var Mailer = require('../../../../lib/mailer');
+    var m = new Mailer();
+    m.send(null, null, function(err, ress){
+        if(err) return res.status(400).send({
+            message: (err)
+        });
+        else res.json('good');
+    });
+    // console.log("req.params.id: ",req);
+    // User.find({_id: req.params.id})
+    //     .limit(1)
+    //     .exec(function (err, user) {
+    //         if (err) {
+    //             return res.status(400).send({
+    //                 message: (err)
+    //             });
+    //         } else {
+    //             res.json(user);
+    //         }
+    //     });
 };
 
 // exports.bulkInsert = function (req, res) {

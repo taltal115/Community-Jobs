@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function () {
   // Init module configuration options
   var applicationModuleName = 'ui';
-  var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.utils', 'angularFileUpload', 'ui.select', 'ngSanitize', 'toastr', 'ngCsv', 'cgBusy', 'chart.js', 'ngTagsInput', 'uiSwitch', 'ui.ace', 'ngclipboard', 'ngMaterial', 'ngAria'];
+  var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ui.router', 'ui.bootstrap', 'ui.utils', 'angularFileUpload', 'ui.select', 'ngSanitize', 'toastr', 'ngCsv', 'cgBusy', 'chart.js', 'ngTagsInput', 'uiSwitch', 'ui.ace', 'ngclipboard'];
 
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {

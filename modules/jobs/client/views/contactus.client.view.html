@@ -1,0 +1,53 @@
+<h1>Contact Us</h1>
+
+<div ng-controller="ContactUsController" layout="column" ng-cloak class="md-inline-form">
+    <form name="userForm" ng-submit="_submitContact()">
+        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <div>
+            <md-input-container>
+                <label>שם מלא</label>
+                <input ng-model="user.name">
+            </md-input-container>
+
+            <md-input-container>
+                <label>דוא"ל</label>
+                <input ng-model="user.email" type="email">
+            </md-input-container>
+        </div>
+    </md-content>
+
+    <md-content layout-padding>
+        <div>
+
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>טלפון</label>
+                        <input ng-model="user.phone">
+                    </md-input-container>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>כתובת</label>
+                    <input ng-model="user.address">
+                </md-input-container>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>עיר</label>
+                        <input ng-model="user.city">
+                    </md-input-container>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>הודעה</label>
+                    <textarea ng-model="user.message" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                </md-input-container>
+
+                <md-button type="submit" class="md-raised">שלח</md-button>
+
+        </div>
+    </md-content>
+    </form>
+
+</div>

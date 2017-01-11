@@ -20,6 +20,9 @@ exports.invokeRolesPolicies = function () {
         }, {
             resources: '/api/page/:id',
             permissions: '*'
+        }, {
+            resources: '/api/contactus/send',
+            permissions: '*'
         }]
     }]);
 };

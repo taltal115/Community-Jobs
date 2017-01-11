@@ -1,26 +1,56 @@
-<section data-ng-controller="PageCtrl" data-ng-init="initUser ()">
-
-    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Card with image</span>
-                <span class="md-subhead">Large</span>
-            </md-card-title-text>
-            <md-card-title-media>
-                <div class="md-media-lg card-media"></div>
-            </md-card-title-media>
-        </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
-        </md-card-actions>
-    </md-card>
-
+<section data-ng-controller="PageCtrl" data-ng-init="initUser()">
     <div class="jumbotron">
-        <h1>Jumbotron</h1>
+        <h1>{{userObj.displayName}}</h1>
+        <div class="row">
+            <ol class="name-value" style="width: 100%;">
+                <li>
+                    <label for="about">מקצוע</label>
+                    <span id="about">{{userObj.profession}}</span>
+                </li>
+                <hr>
+                <li>
+                    <label for="about">דוא"ל</label>
+                    <span id="Span1">{{userObj.email}}</span>
+                </li>
+                <li>
+                    <label for="about">עיר</label>
+                    <span id="Span2">{{userObj.city}}</span>
+                </li>
+                <li>
+                    <label for="about">טלפון</label>
+                    <span id="about1">{{userObj.phone}}</span>
+                </li>
+                <li>
+                    <label for="about">יכולות</label>
+                    <span id="Span11">{{userObj.capabilities}}</span>
+                </li>
+                <li>
+                    <label for="about">אתר אנטרנט</label>
+                    <span id="Span21">{{userObj.webSite}}</span>
+                </li>
+                <li>
+                    <label for="about">תעודות</label>
+                    <span id="about11">{{userObj.certificates}}</span>
+                </li>
+                <li>
+                    <label for="about">שם העסק</label>
+                    <span id="Span111">{{userObj.businessName}}</span>
+                </li>
+                <li>
+                    <label for="about">הערות</label>
+                    <span id="Span211">{{userObj.comments}}</span>
+                </li>
+                <li>
+                    <label for="about">כתובת העסק</label>
+                    <span id="Span2111">{{userObj.businessAddress}}</span>
+                </li>
+            </ol>
+        </div>
 
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <md-button class="md-raised">צור קשר</md-button>
+
 
         <p><a class="btn btn-primary btn-lg">Learn more</a></p>
     </div>
+
 </section>
